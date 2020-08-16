@@ -23,7 +23,6 @@ __author__ = "goddesscoder"
 
 
 def verbing(s):
-    # your code here
     string = s
     if len(string) >= 3 and string.endswith("ing"):
         return string + "ly"

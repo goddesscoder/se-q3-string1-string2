@@ -73,7 +73,6 @@ def both_ends(s):
 
 
 def fix_start(s):
-    # your code here
     word = s
     stra = word[0]
     strb = "*"
