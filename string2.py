@@ -43,7 +43,6 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
     e_string = s
     e_not = e_string.find("not")
     e_bad = e_string.find("bad")
@@ -68,9 +67,6 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    # joint_stringnum = len(a) + len(b)
-    # joint_string = a + b
     string_a = a
     string_b = b
 
