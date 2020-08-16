@@ -50,6 +50,8 @@ def not_bad(s):
     e_notbad = e_string.split("not")[0]
 
     if (e_bad > e_not):
+        if e_string[-1] in ("!"):
+            return e_notbad + "good!"
         return e_notbad + "good"
     else:
         return e_string
@@ -67,17 +69,25 @@ def not_bad(s):
 
 def front_back(a, b):
     # your code here
-    joint_stringnum = len(a) + len(b)
-    joint_string = a + b
-    a_front = a[:len(a)//2]
-    b_front = b[:len(b)//2]
-    a_back = a[len(a)//2:]
-    b_back = b[len(b)//2:]
+    # joint_stringnum = len(a) + len(b)
+    # joint_string = a + b
+    string_a = a
+    string_b = b
 
-    if joint_stringnum % 2 == 0:
-        return a_front + b_front + a_back + b_back
+    if len(string_a) % 2 == 0:
+        a_front = a[:len(a)//2]
+        a_back = a[len(a)//2:]
     else:
-        return a_front + b_front + a_back + b_back
+        a_front = a[:len(a)//2+1]
+        a_back = a[len(a)//2+1:]
+    if len(string_b) % 2 == 0:
+        b_front = b[:len(b)//2]
+        b_back = b[len(b)//2:]
+    else:
+        b_front = b[:len(b)//2+1]
+        b_back = b[len(b)//2+1:]
+
+    return a_front + b_front + a_back + b_back
 
 
 # Provided simple test() function used in main() to print
