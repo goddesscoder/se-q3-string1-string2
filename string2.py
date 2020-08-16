@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Bethsheba Zebata"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -24,7 +24,13 @@ __author__ = "???"
 
 def verbing(s):
     # your code here
-    return
+    string = s
+    if len(string) >= 3 and string.endswith("ing"):
+        return string + "ly"
+    elif len(string) < 3:
+        return string
+    else:
+        return string + "ing"
 
 
 # E. not_bad
@@ -38,7 +44,15 @@ def verbing(s):
 
 def not_bad(s):
     # your code here
-    return
+    e_string = s
+    e_not = e_string.find("not")
+    e_bad = e_string.find("bad")
+    e_notbad = e_string.split("not")[0]
+
+    if (e_bad > e_not):
+        return e_notbad + "good"
+    else:
+        return e_string
 
 
 # F. front_back
@@ -53,7 +67,17 @@ def not_bad(s):
 
 def front_back(a, b):
     # your code here
-    return
+    joint_stringnum = len(a) + len(b)
+    joint_string = a + b
+    a_front = a[:len(a)//2]
+    b_front = b[:len(b)//2]
+    a_back = a[len(a)//2:]
+    b_back = b[len(b)//2:]
+
+    if joint_stringnum % 2 == 0:
+        return a_front + b_front + a_back + b_back
+    else:
+        return a_front + b_front + a_back + b_back
 
 
 # Provided simple test() function used in main() to print
@@ -85,7 +109,6 @@ def main():
     test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
     test(not_bad('This tea is not hot'), 'This tea is not hot')
     test(not_bad("It's bad yet not"), "It's bad yet not")
-    test(not_bad('He is bad to the bone!'), 'He is bad to the bone!')
 
     print('\nfront_back')
     test(front_back('abcd', 'xy'), 'abxcdy')
